@@ -16,7 +16,7 @@ def assign_rooms(speaker_arr)
   speaker_arr.each_with_index do |name, idx|
     room_assignments[idx] = "Hello, #{name}! You'll be assigned to room #{idx + 1}!"
   end
-  room_assignments
+  return room_assignments
 end
 
 def printer(attendees)
