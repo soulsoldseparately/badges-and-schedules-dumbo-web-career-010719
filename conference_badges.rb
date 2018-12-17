@@ -7,7 +7,8 @@ end
 def batch_badge_creator(name_arr)
   new_arr = []
   name_arr.each { |item| new_arr << badge_maker(item) }
-  new_arr
+  
+  return new_arr
 end
 
 def assign_rooms(speaker_arr)
@@ -15,10 +16,10 @@ def assign_rooms(speaker_arr)
   speaker_arr.each_with_index do |name, idx|
     room_assignments[idx] = "Hello, #{name}! You'll be assigned to room #{idx + 1}!"
   end
-  room_assignments
+  return room_assignments
 end
 
 def printer(attendees)
-   batch_badge_creator(attendees).collect {|item| puts item}
-   assign_rooms(attendees).collect {|item| puts item}
+   batch_badge_creator(attendees).each {|item| puts item}
+   assign_rooms(attendees).each {|item| puts item}
 end
